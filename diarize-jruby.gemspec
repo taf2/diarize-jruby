@@ -12,5 +12,6 @@ Gem::Specification.new do |s|
   s.platform = 'java'
   s.add_dependency 'to-rdf'
   s.add_dependency 'jblas-ruby'
+  s.add_development_dependency 'mocha'
 end
 

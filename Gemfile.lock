@@ -1,0 +1,25 @@
+PATH
+  remote: .
+  specs:
+    diarize-jruby (0.2.1-java)
+      jblas-ruby
+      to-rdf
+
+GEM
+  remote: http://www.rubygems.org/
+  specs:
+    jblas-ruby (1.1.1)
+    metaclass (0.0.4)
+    mocha (1.1.0)
+      metaclass (~> 0.0.1)
+    to-rdf (0.0.1)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  diarize-jruby!
+  mocha
+
+BUNDLED WITH
+   1.10.5
