@@ -21,6 +21,7 @@ require File.join(File.expand_path(File.dirname(__FILE__)), 'speaker')
 require 'rubygems'
 require 'to_rdf'
 require 'uri'
+require 'digest/md5'
 
 module Diarize
 
@@ -35,7 +36,7 @@ module Diarize
         @path = uri.path
       else
         # Remote file, we get it locally
-        @path = '/tmp/' + URI.escape(uri.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
+        @path = '/tmp/' + Digest::MD5.hexdigest(uri.to_s) # URI.escape(uri.to_s, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
         Kernel.system("wget #{uri} -O #{@path}")
       end
       @file = File.new @path
